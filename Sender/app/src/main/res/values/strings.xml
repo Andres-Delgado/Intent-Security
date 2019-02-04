@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Sender</string>
+    <string name="tvHint">Write Text to Send</string>
+    <string name="sendButton">Send to App</string>
+</resources>
