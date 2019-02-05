@@ -29,8 +29,16 @@ public class MainActivity extends AppCompatActivity {
 
         // get the app data sent on bundle
         Bundle b = getIntent().getExtras();
-        byte[] cipherText = b.getByteArray("Comment");
-        //byte[] cipherText = getIntent().getByteArrayExtra("Comment");
+
+        //byte[] cipherText = b.getByteArray("Comment");
+
+        byte[] cipherText = new byte[0];
+
+        try {
+            cipherText = b.getByteArray("Comment");
+        } catch (NullPointerException e) {
+            e.printStackTrace();
+        }
 
         // create secret
         String pw = "andres13andres13";

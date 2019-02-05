@@ -19,11 +19,17 @@ public class MainActivity extends AppCompatActivity {
         Bundle bundle = getIntent().getExtras();
 
         // loop through all the keys in the bundle
+
         for (String key: bundle.keySet()) {
 
             // get object by key
             // we define object because it may be text or image
-            Object value = bundle.get(key);
+            Object value = new Object();
+            try {
+                value = bundle.get(key);
+            } catch (NullPointerException e) {
+                e.printStackTrace();
+            }
 
             // get all keys
             DataBundle += String.format("%s %s (%s)", key, value.toString(), value.getClass().getName());
